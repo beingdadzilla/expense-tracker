@@ -54,3 +54,4 @@ TestResult.xml
 nunit-*.xml
 ByteCrafters.ExpenseTrackerApi/.idea/
 ByteCrafters.ExpenseTrackerApi/expense-tracker-ui/wwwroot/
+ByteCrafters.ExpenseTrackerApi/wwwroot/*

@@ -1,3 +1,5 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,6 +24,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.UseDefaultFiles(); // This will look for files like index.html automatically
-app.UseStaticFiles();
-
+app.UseStaticFiles()
 app.Run();
