@@ -21,5 +21,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseDefaultFiles(); // This will look for files like index.html automatically
+app.UseStaticFiles();
 
 app.Run();
