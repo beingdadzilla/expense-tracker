@@ -24,5 +24,22 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.UseDefaultFiles(); // This will look for files like index.html automatically
-app.UseStaticFiles()
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "expense-tracker-ui", "dist", "expense-tracker-ui", "browser")),
+    RequestPath = ""
+});
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapFallbackToFile("index.html", new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(
+            Path.Combine(builder.Environment.ContentRootPath, "expense-tracker-ui", "dist", "expense-tracker-ui", "browser"))
+    });
+});
+
+
 app.Run();
